@@ -48,6 +48,17 @@ public class FuncionarioResource {
         return funcionarioRepository.findById(id);
     }
 
+    @DeleteMapping
+    public void deleteFuncionario(@RequestBody Funcionario funcionario){
+        funcionarioRepository.delete(funcionario);
+    }
+
+    @PutMapping
+    public Funcionario atualizaFuncionario(@RequestBody Funcionario funcionario){
+        return funcionarioRepository.save(funcionario);
+    }
+
+
     @ExceptionHandler({UnicidadeCpfException.class})
     public ResponseEntity<Erro> handleUnicidadeCpfException(UnicidadeCpfException e) {
         return new ResponseEntity<>(new Erro(e.getMessage()), HttpStatus.BAD_REQUEST);
