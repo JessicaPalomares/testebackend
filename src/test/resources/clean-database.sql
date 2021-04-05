@@ -1,0 +1,7 @@
+DELETE FROM telefone;
+DELETE FROM endereco;
+DELETE FROM funcionario;
+
+ALTER TABLE funcionario AUTO_INCREMENT = 1;
+ALTER TABLE endereco AUTO_INCREMENT = 1;
+ALTER TABLE telefone AUTO_INCREMENT = 1;
